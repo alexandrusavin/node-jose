@@ -60,6 +60,7 @@ describe("jwe/roundtrip", function() {
       });
       promise = promise.then(function(result) {
         assert.ok(result);
+        console.log(result.protected);
         var jwe = JWE.createDecrypt(key);
         return jwe.decrypt(result);
       });
